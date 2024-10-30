@@ -545,57 +545,101 @@ class WA_Fronted {
 		wp_enqueue_script('heartbeat');
 		wp_enqueue_script('wp-auth-check');
 
+		// wp_enqueue_script(
+		// 	'jqueryui-timepicker-addon',
+		// 	plugins_url( '/bower_components/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js', __FILE__ ),
+		// 	array(
+		// 		'jquery',
+		// 		'jquery-ui-core',
+		// 		'jquery-ui-datepicker'
+		// 	),
+		// 	'1.5.5',
+		// 	true
+		// );
+
+		// wp_enqueue_script(
+		// 	'tipso',
+		// 	plugins_url( '/bower_components/tipso/src/tipso.min.js', __FILE__ ),
+		// 	array(
+		// 		'jquery'
+		// 	),
+		// 	'1.0.6',
+		// 	true
+		// );
+
+		// wp_enqueue_script(
+		// 	'toastr',
+		// 	plugins_url( '/bower_components/toastr/toastr.js', __FILE__ ),
+		// 	array(
+		// 		'jquery'
+		// 	),
+		// 	'2.1.2',
+		// 	true
+		// );
+
+		// wp_enqueue_script(
+		// 	'select2',
+		// 	plugins_url( '/bower_components/select2/dist/js/select2.full.min.js', __FILE__ ),
+		// 	array(
+		// 		'jquery'
+		// 	),
+		// 	'4.0.0',
+		// 	true
+		// );
+
+		// wp_enqueue_script(
+		// 	'rangy',
+		// 	plugins_url( '/bower_components/rangy/rangy-core.min.js', __FILE__ ),
+		// 	array(
+		// 		'jquery'
+		// 	),
+		// 	'1.3.0',
+		// 	true
+		// );
+
+
+
+		//Scripts changed to CDNjs absolute links
 		wp_enqueue_script(
-			'jqueryui-timepicker-addon',
-			plugins_url( '/bower_components/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js', __FILE__ ),
-			array(
-				'jquery',
-				'jquery-ui-core',
-				'jquery-ui-datepicker'
-			),
-			'1.5.5',
-			true
+		    'jqueryui-timepicker-addon',
+		    'https://cdnjs.cloudflare.com/ajax/libs/jqueryui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js',
+		    array('jquery', 'jquery-ui-core', 'jquery-ui-datepicker'),
+		    '1.6.3',
+		    true
+		);
+		
+		wp_enqueue_script(
+		    'tipso',
+		    'https://cdnjs.cloudflare.com/ajax/libs/tipso/1.0.6/tipso.min.js',
+		    array('jquery'),
+		    '1.0.6',
+		    true
+		);
+		
+		wp_enqueue_script(
+		    'toastr',
+		    'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js',
+		    array('jquery'),
+		    '2.1.4',
+		    true
+		);
+		
+		wp_enqueue_script(
+		    'select2',
+		    'https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.full.min.js',
+		    array('jquery'),
+		    '4.1.0',
+		    true
+		);
+		
+		wp_enqueue_script(
+		    'rangy',
+		    'https://cdnjs.cloudflare.com/ajax/libs/rangy/1.3.1/rangy-core.min.js',
+		    array('jquery'),
+		    '1.3.1',
+		    true
 		);
 
-		wp_enqueue_script(
-			'tipso',
-			plugins_url( '/bower_components/tipso/src/tipso.min.js', __FILE__ ),
-			array(
-				'jquery'
-			),
-			'1.0.6',
-			true
-		);
-
-		wp_enqueue_script(
-			'toastr',
-			plugins_url( '/bower_components/toastr/toastr.js', __FILE__ ),
-			array(
-				'jquery'
-			),
-			'2.1.2',
-			true
-		);
-
-		wp_enqueue_script(
-			'select2',
-			plugins_url( '/bower_components/select2/dist/js/select2.full.min.js', __FILE__ ),
-			array(
-				'jquery'
-			),
-			'4.0.0',
-			true
-		);
-
-		wp_enqueue_script(
-			'rangy',
-			plugins_url( '/bower_components/rangy/rangy-core.min.js', __FILE__ ),
-			array(
-				'jquery'
-			),
-			'1.3.0',
-			true
-		);
 
 		wp_enqueue_script(
 			'wa-fronted-scripts',
@@ -645,10 +689,16 @@ class WA_Fronted {
 		wp_enqueue_style( 'open-sans' );
 
 		if(!$this->post_lock){
+			// wp_enqueue_style(
+			// 	'wa-fronted-timepicker-addon',
+			// 	plugins_url( '/bower_components/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css', __FILE__ )
+			// );
 			wp_enqueue_style(
-				'wa-fronted-timepicker-addon',
-				plugins_url( '/bower_components/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css', __FILE__ )
+			    'wa-fronted-timepicker-addon',
+			    'https://cdnjs.cloudflare.com/ajax/libs/jqueryui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css'
 			);
+
+			
 			wp_enqueue_style(
 				'wa-fronted-style',
 				plugins_url( '/css/style.css', __FILE__ )
